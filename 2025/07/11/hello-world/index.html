@@ -100,12 +100,12 @@ IfClara = IfClara</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
           <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclgrvbd6j20zk0m8qv5.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipewr8iypj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipeyvx1d4j20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipey0a334j20zk0m8qpt.jpg"></li>
+          <li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
         </ul>
       </div>
     </header>
@@ -139,7 +139,7 @@ IfClara = IfClara</title>
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
     <meta itemprop="name" content="IfClara">
-    <meta itemprop="description" content=", 唯一不变的就是变化">
+    <meta itemprop="description" content=", 唯一不变的是变化">
   </span>
 
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -176,7 +176,23 @@ IfClara = IfClara</title>
     <time title="修改时间：2025-07-11 20:57:02" itemprop="dateModified" datetime="2025-07-11T20:57:02+08:00">2025-07-11</time>
   </span>
 </div>
-
+<div class="timing">
+  <span id="RunTime"></span>
+  <script>
+    var BootDate = new Date("2025/7/11 23:00:00"); 
+    function ShowRunTime(id) {
+      var NowDate = new Date();
+      var RunDateM = parseInt(NowDate - BootDate);
+      var RunDays = Math.floor(RunDateM/(24*3600*1000));
+      var RunHours = Math.floor(RunDateM%(24*3600*1000)/(3600*1000));
+      var RunMinutes = Math.floor(RunDateM%(24*3600*1000)%(3600*1000)/(60*1000));
+      var RunSeconds = Math.round(RunDateM%(24*3600*1000)%(3600*1000)%(60*1000)/1000);
+      var RunTime = RunDays + " footer.days " + RunHours + " footer.hours " + RunMinutes + " footer.minutes " + RunSeconds + " footer.seconds";
+      document.getElementById(id).innerHTML = "footer.timing " + RunTime;
+    }
+    setInterval("ShowRunTime('RunTime')", 1000);
+  </script>
+</div>
       
 <div class="reward">
   <button><i class="ic i-heartbeat"></i> 赞赏</button>
@@ -253,7 +269,7 @@ IfClara = IfClara</title>
   <img class="image" itemprop="image" alt="IfClara"
       data-src="/images/avatar.jpg">
   <p class="name" itemprop="name">IfClara</p>
-  <div class="description" itemprop="description">唯一不变的就是变化</div>
+  <div class="description" itemprop="description">唯一不变的是变化</div>
 </div>
 
 <nav class="state">
